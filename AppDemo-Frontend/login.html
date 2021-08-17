@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.Kumarasamy College of Engineering</title>
+
+  <link rel="stylesheet" href="css/login.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <script src="js/framework.js"></script>
+  <script src="js/login.js"></script>
+</head>
+
+<body>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+
+  </div>
+  <div class="title">
+    <div class="collegeTitle">MKCE: M.Kumarasamy College of Engineering, Karur</div>
+    <div class="department">Department of Information Technology</div>
+    <div class="course">Basics of Node Js (REST Api - CRUD Operation)</div>
+  </div>
+
+
+
+  <div class="container-flex">
+    <div class="container">
+      <div class="container-header">Create</div>
+
+      <div class="container-request">
+        <div class="container-table-title">Ajax Request</div>
+        <table id="addRequestTable">
+          <thead>
+            <tr>
+              <th>Request</th>
+              <th>Endpoint</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>POST</td>
+              <td>http://localhost:8000/add-product</td>
+              <td id="addRequestData">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="container-response">
+        <div class="container-table-title">Ajax Response</div>
+        <div class="container-response-result">
+          <pre>
+                <code id="addResponse">
+                </code>
+              </pre>
+        </div>
+      </div>
+
+
+      <div class="container-body">
+        <div class="container-table-title">Product Add UI</div>
+        <div>
+          <div class="form">
+            <label for="productName">Product Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+            <input type="text" id="productName" name="productName"><br><br>
+            <label for="productQuantity">Product Quantity&nbsp;:</label>
+            <input type="number" id="productQuantity" name="productQuantity"><br><br>
+            <label for="productPrice">Product Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+            <input type="number" id="productPrice" name="productPrice"><br><br>
+            <button id="addProduct">Add Product</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="container-header">Read</div>
+      <div class="container-request">
+        <div class="container-table-title">Ajax Request</div>
+        <table id="readRequestTable">
+          <thead>
+            <tr>
+              <th>Request</th>
+              <th>Endpoint</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>http://localhost:8000/get-product</td>
+              <td>{}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="container-response">
+        <div class="container-table-title">Ajax Response</div>
+        <div class="container-response-result">
+          <pre>
+          <code id="readResponse">
+          </code>
+        </pre>
+        </div>
+      </div>
+
+
+      <div class="container-body">
+        <div class="container-table-title">Response into UI</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Sno</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="readTable">
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-header">Update</div>
+      <div class="container-request">
+        <div class="container-table-title">Ajax Request</div>
+        <table id="updateRequestTable">
+          <thead>
+            <tr>
+              <th>Request</th>
+              <th>Endpoint</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PUT</td>
+              <td>http://localhost:8000/update-product</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="container-response">
+        <div class="container-table-title">Ajax Response</div>
+        <div class="container-response-result">
+          <pre>
+                <code id="updateResponse">
+                </code>
+              </pre>
+        </div>
+      </div>
+
+
+      <div class="container-body">
+        <div class="container-table-title">Response into UI</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Sno</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody id="updateTable">
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-header">Delete</div>
+      <div class="container-request">
+        <div class="container-table-title">Ajax Request</div>
+        <table id="deleteRequestTable">
+          <thead>
+            <tr>
+              <th>Request</th>
+              <th>Endpoint</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DELETE</td>
+              <td>http://localhost:8000/delete-product</td>
+              <td id="deleteRequestData">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="container-response">
+        <div class="container-table-title">Ajax Response</div>
+        <div class="container-response-result">
+          <pre>
+                <code id="deleteResponse">
+                </code>
+              </pre>
+        </div>
+      </div>
+
+
+      <div class="container-body">
+        <div class="container-table-title">Response into UI</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Sno</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="deleteTable">
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
